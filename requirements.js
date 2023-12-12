@@ -33,3 +33,10 @@
 //To get all the publications-DONE
 //specific publication-DONE
 //list of publications based on a book-DONE
+
+
+//POST REQUESTS
+//1.Add new book-DONE
+//2.Add new publication-DONE
+//3.Add new author-DONE
+//post request-send the data and receiving data

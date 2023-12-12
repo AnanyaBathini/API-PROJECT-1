@@ -1,10 +1,14 @@
 //book management project
 
 const express=require("express");
+//importing body parser module for post request
+var bodyParser=require("body-parser");
 //Database
 const database=require("./database");
 //initialising express
 const bookie=express();
+bookie.use(bodyParser.urlencoded({extened:true}));
+bookie.use(bodyParser.json());
 /*
 Route         /
 Description   get all the books
@@ -154,6 +158,44 @@ bookie.get("/pub/:isbn",(req,res)=>{
     
 });
 
+/*
+Route         /book/new
+Description   add new books
+Acess         PUBLIC
+parameter     NONE
+methods used  POST
+*/
+
+bookie.post("/book/new",(req,res)=>{
+    const newBook=req.body;
+    database.books.push(newBook);
+    return res.json({updatedBooks:database.books});
+});
+/*
+Route         /author/new
+Description   add new authors
+Acess         PUBLIC
+parameter     NONE
+methods used  POST
+*/
+bookie.post("/author/new",(req,res)=>{
+    const newAuthor=req.body;
+    database.author.push(newAuthor);
+    return res.json({updatedAuthors:database.author});
+});
+
+/*
+Route         /publication/new
+Description   add new publications
+Acess         PUBLIC
+parameter     NONE
+methods used  POST
+*/
+bookie.post("/publication/new",(req,res)=>{
+    const newPublication=req.body;
+    database.publication.push(newPublication);
+    return res.json({updatedPublications:database.publication});
+});
 bookie.listen(3000,()=>{
     console.log("Server is up and running");
 });
