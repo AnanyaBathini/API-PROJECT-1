@@ -40,3 +40,13 @@
 //2.Add new publication-DONE
 //3.Add new author-DONE
 //post request-send the data and receiving data
+
+//PUT method-to update
+//1.Update book details if the author is changed-DONE
+//
+
+//DELETE
+//1.delete a book-DONE
+//2.deleet author from book
+//3.delete author from book and related book from author
+//-DONE
