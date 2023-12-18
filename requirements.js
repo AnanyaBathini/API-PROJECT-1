@@ -50,3 +50,12 @@
 //2.deleet author from book
 //3.delete author from book and related book from author
 //-DONE
+
+
+//MONGOOSE and MONGODB
+//MONGODB is schema less but mongoose uses schema
+//schema is a blueprint of how data has to be constructed
+//mongoose helps in validation(security,checkpoints,relationship with other data)
+
+//model-document model of mongoDB
+//SChema->Model->use them
