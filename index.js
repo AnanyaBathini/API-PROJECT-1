@@ -287,6 +287,50 @@ bookie.post("/publication/new",(req,res)=>{
     return res.json({updatedPublications:database.publication});
 });
 
+/******************PUT**********************/
+
+/*
+Route         /publication/update/book
+Description   update book on isbn 
+Acess         PUBLIC
+parameter     isbn
+methods used  PUT
+*/
+bookie.put("/book/update/:isbn",async(req,res)=>{
+    const updatedBook=await BookModel.findOneAndUpdate(
+        {
+            ISBN: req.params.isbn
+        },
+        {
+            title:req.body.bookTitle
+        },
+        {
+            new: true
+        }
+    );
+    return res.json({
+        books:updatedBook
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 Route         /publication/update/book
 Description   update or add new publications
